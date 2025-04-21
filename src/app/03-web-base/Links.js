@@ -1,17 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { getNavLinks } from "@/helpers/web-base-helpers";
-
-async function SiteHeader() {
-  return (
-    <header className="site-header">
-      <Link href="" className="logo">
-        WebBase
-      </Link>
-      <React.Suspense>{<Links />}</React.Suspense>
-    </header>
-  );
-}
+export const dynamic = "force-dynamic";
 
 async function Links({ isHeader = true }) {
   let navLinks = await getNavLinks();
@@ -37,4 +27,4 @@ async function Links({ isHeader = true }) {
   );
 }
 
-export default SiteHeader;
+export default Links;
